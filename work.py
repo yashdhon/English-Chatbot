@@ -75,7 +75,7 @@ st.write("Data Loaded ")
 
 client=GoogleGenerativeAI(
     model="gemini-3-flash-preview",  
-    api_key="AIzaSyC_r7W2jri1wJVN9YvfbjQYDjUPUwkzabE"        
+    api_key=api_key       
    
     
 )         
@@ -173,9 +173,7 @@ else:
 
             st.write("Retriever Working")
 
-            # ==================================
-            # FORMAT DOCS
-            # ==================================
+            
 
             def format_docs(docs):
 
@@ -202,9 +200,7 @@ else:
 
             st.write("Step 4: History ready")
 
-            # ==================================
-            # CHAIN
-            # ==================================
+            
 
             val = prompt | client
 
@@ -220,9 +216,7 @@ else:
 
             st.success(ans)
 
-            # ==================================
-            # STORE CHAT
-            # ==================================
+           
 
             st.session_state.chat.append(
                 f"User: {query}"
